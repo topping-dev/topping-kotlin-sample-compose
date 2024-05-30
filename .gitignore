@@ -1,0 +1,7 @@
+**/.DS_Store
+build
+.gradle
+.idea
+shared/build
+iosApp/Pods
+iosApp/Podfile.lock
