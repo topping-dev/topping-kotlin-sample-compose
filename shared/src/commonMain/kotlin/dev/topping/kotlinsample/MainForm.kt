@@ -1,9 +1,13 @@
 package dev.topping.kotlinsample
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -22,6 +26,7 @@ import androidx.compose.ui.navigation.rememberNavController
 import androidx.compose.ui.platform.PlatformComposeView
 import androidx.compose.ui.platform.PlatformContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.platform.viewModel
 import dev.topping.kotlin.ILuaForm
 import dev.topping.kotlin.LR
@@ -50,6 +55,22 @@ class MainForm(form: Any) : ILuaForm(form) {
     fun BScreen(navController: PlatformNavHostController) {
         Box(modifier = Modifier.fillMaxSize(),
             contentAlignment = Alignment.Center) {
+            Row {
+                val range = 1..100
+
+                LazyColumn(
+                    modifier = Modifier
+                        .fillMaxSize(),
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    items(range.count()) { index ->
+                        Button(onClick = {  }) {
+                            Text("Filled ${index + 1}")
+                        }
+                        //Text(text = "- List item number ${index + 1}")
+                    }
+                }
+            }
             Button(
                 onClick = {
                     navController.navigateUp()
@@ -85,7 +106,8 @@ class MainForm(form: Any) : ILuaForm(form) {
             },
         ) { innerPadding ->
             PlatformNavHost(
-                modifier = Modifier.background(Color.Red),
+                modifier = Modifier.background(Color.Red)
+                    .padding(innerPadding),
                 navController = navController,
                 startDestination = "AScreen"
             ) {
@@ -96,21 +118,6 @@ class MainForm(form: Any) : ILuaForm(form) {
                     BScreen(navController)
                 }
             }
-            /*val range = 1..100
-
-            LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize(),
-                contentPadding = innerPadding,
-                verticalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                items(range.count()) { index ->
-                    Button(onClick = {  }) {
-                        Text("Filled ${index + 1}")
-                    }
-                    //Text(text = "- List item number ${index + 1}")
-                }
-            }*/
         }
     }
 
@@ -119,11 +126,6 @@ class MainForm(form: Any) : ILuaForm(form) {
         PlatformComposeView(cc).addThis(getForm().getNativeForm()) {
             App()
         }
-
-        /*val navController = getForm().getFragmentManager()?.findFragmentById(LR.id.nav_host_fragment)
-            ?.getNavController()
-        val toolbar: LGToolbar? = getForm().getViewById(LR.id.ToolbarTest)
-        LuaNavigationUI.setupWithNavController(toolbar!!, navController!!)*/
     }
 
     override fun onResume() {
