@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="receive">Receive</string>
+    <string name="ascreen">A Screen</string>
+    <string name="bscreen">B Screen</string>
 </resources>

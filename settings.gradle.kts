@@ -4,8 +4,8 @@ pluginManagement {
         maven("https://github.com/topping-dev/topping-compose-release/raw/maven2")
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
         google()
-        gradlePluginPortal()
         mavenCentral()
+        gradlePluginPortal()
     }
     
 }
@@ -14,10 +14,10 @@ dependencyResolutionManagement {
     repositories {
         //mavenLocal()
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
-        google()
-        gradlePluginPortal()
-        mavenCentral()
         maven("https://github.com/topping-dev/topping-compose-release/raw/maven2")
+        google()
+        mavenCentral()
+        gradlePluginPortal()
     }
 }
 

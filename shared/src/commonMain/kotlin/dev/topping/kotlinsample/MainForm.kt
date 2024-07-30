@@ -46,7 +46,7 @@ class MainForm(form: Any) : ILuaForm(form) {
                     }
                 }
             ) {
-                Text("A Screen")
+                Text(stringResource(LR.string.ascreen.compose))
             }
         }
     }
@@ -67,7 +67,6 @@ class MainForm(form: Any) : ILuaForm(form) {
                         Button(onClick = {  }) {
                             Text("Filled ${index + 1}")
                         }
-                        //Text(text = "- List item number ${index + 1}")
                     }
                 }
             }
@@ -76,7 +75,7 @@ class MainForm(form: Any) : ILuaForm(form) {
                     navController.navigateUp()
                 }
             ) {
-                Text("B Screen")
+                Text(stringResource(LR.string.bscreen.compose))
             }
         }
     }
@@ -85,12 +84,6 @@ class MainForm(form: Any) : ILuaForm(form) {
     fun App(mainViewModel: MainViewModel = viewModel(key = "MainViewModel") {
         MainViewModel()
     }) {
-        //Text(modifier = Modifier.wrapContentSize(), text = "asd")
-        /*Column {
-            Row(modifier = Modifier.size(60.dp).background(Color.Red)) {
-                Text(modifier = Modifier.wrapContentSize(), text = "asd")
-            }
-        }*/
         val navController = rememberNavController()
         Scaffold(
             topBar = {

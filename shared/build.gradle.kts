@@ -18,9 +18,9 @@ kotlin {
     iosSimulatorArm64()
 
     cocoapods {
-        specRepos {
+        /*specRepos {
             url("https://github.com/Deadknight/dk-specs.git")
-        }
+        }*/
         summary = "Topping Engine kotlin sample"
         homepage = "https://github.com/topping-dev/topping-kotlin-sample"
         ios.deploymentTarget = "13.0"
@@ -29,7 +29,7 @@ kotlin {
             isStatic = false
         }
         pod("Topping") {
-            version = "0.6.0"
+            version = "0.6.1"
             extraOpts += listOf("-compiler-option", "-fmodules")
             //linkOnly = true
         }
@@ -48,12 +48,20 @@ kotlin {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3")
                 implementation(kotlin("reflect"))
-                implementation("dev.topping:toppingkotlin:0.6.0")
+                implementation("dev.topping:toppingkotlin:0.6.1")
 
-                implementation("androidx.compose.ui:ui:1.6.0-alpha06-topping01")
-                implementation("androidx.compose.ui:ui-navigation:1.6.0-alpha06-topping01")
-                implementation("androidx.compose.ui:ui-lifecycle:1.6.0-alpha06-topping01")
-                implementation("androidx.compose.material3:material3:1.2.0-alpha08-topping01")
+                implementation("androidx.compose.ui:ui") {
+                    version {
+                        strictly("1.6.0-alpha06-topping02")
+                    }
+                }
+                implementation("androidx.compose.ui:ui-navigation:1.6.0-alpha06-topping02")
+                implementation("androidx.compose.ui:ui-lifecycle:1.6.0-alpha06-topping02")
+                implementation("androidx.compose.material3:material3") {
+                    version {
+                        strictly("1.2.0-alpha08-topping02")
+                    }
+                }
             }
         }
         //commonMain.kotlin.srcDir("../androidApp/build/generated/toppingviewbinding")

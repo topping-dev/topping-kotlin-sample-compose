@@ -9,8 +9,8 @@ plugins {
 apply(from = "./kotlinprocessor.gradle")
 
 dependencies {
-    implementation(project(":shared"))
-    implementation("androidx.constraintlayout:constraintlayout:2.0.2")
+    implementation (project(":shared"))
+    implementation ("androidx.constraintlayout:constraintlayout:2.0.2")
     implementation ("androidx.appcompat:appcompat:1.3.0")
     implementation ("androidx.legacy:legacy-support-v4:1.0.0")
     implementation ("androidx.recyclerview:recyclerview:1.2.1")
@@ -30,7 +30,23 @@ dependencies {
     implementation ("androidx.core:core-ktx:1.3.2")
     implementation ("androidx.fragment:fragment:1.3.5")
     implementation ("androidx.fragment:fragment-ktx:1.3.5")
-    implementation ("dev.topping:toppingandroid:0.6.0")
+    implementation ("dev.topping:toppingandroid") {
+        version {
+            strictly("0.6.1")
+        }
+    }
+    implementation("androidx.compose.ui:ui") {
+        version {
+            strictly("1.6.0-alpha06-topping02")
+        }
+    }
+    implementation("androidx.compose.ui:ui-navigation:1.6.0-alpha06-topping02")
+    implementation("androidx.compose.ui:ui-lifecycle:1.6.0-alpha06-topping02")
+    implementation("androidx.compose.material3:material3") {
+        version {
+            strictly("1.2.0-alpha08-topping02")
+        }
+    }
 }
 
 android {

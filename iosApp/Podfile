@@ -7,8 +7,8 @@ platform :ios, '13.0'
 
 target 'iosApp' do
   pod 'shared', :path => '../shared'
-  pod 'Topping', '0.6.0'
-  pod 'ToppingIOSKotlinHelper', '0.6.0'
+  pod 'Topping', '0.6.1'
+  pod 'ToppingIOSKotlinHelper', '0.6.1'
 end
 
 post_install do |installer|
