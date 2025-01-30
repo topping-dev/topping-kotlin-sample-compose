@@ -4,6 +4,7 @@ plugins {
     kotlin("plugin.serialization")
     kotlin("native.cocoapods")
     id("org.jetbrains.compose")
+    id("dev.topping.kotlin.compose.gradle")
 }
 group = "dev.topping.kotlin"
 version = "1.0"

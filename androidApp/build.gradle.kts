@@ -3,10 +3,8 @@ import org.jetbrains.kotlin.js.dce.InputResource
 plugins {
     id("com.android.application")
     kotlin("android")
-    //id("dev.topping.kotlin.gradle")
+    id("dev.topping.kotlin.compose.gradle")
 }
-
-apply(from = "./kotlinprocessor.gradle")
 
 dependencies {
     implementation (project(":shared"))
