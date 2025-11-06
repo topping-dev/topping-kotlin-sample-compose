@@ -9,6 +9,6 @@ pod install
 
 in iosApp folder
 
-https://kotlinlang.org/lp/mobile/
+https://topping.dev/#/compose
 
 Details are available at https://topping.dev
